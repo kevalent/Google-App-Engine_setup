@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UC Irvine Learning and Decision Neuroscience Laboratory </title>
+
+    <script src="./js/jspsych/jspsych.js" type="text/javascript"></script>
+    <script src="./js/jspsych/jquery-min.js" type="text/javascript"> </script>
+    <script src="./js/jspsych/plugins/jspsych-html-keyboard-response.js"></script>
+    <script src="./js/jspsych/plugins/jspsych-image-button-response.js"></script>
+    <script src="./js/jspsych/plugins/jspsych-call-function.js" type="text/javascript"></script>
+    <script src="./js/jspsych/plugins/jspsych-image-keyboard-response.js" type="text/javascript"></script>
+    <script src="./js/jspsych/plugins/jspsych-external-html.js"></script>
+    <script src="./js/jspsych/plugins/jspsych-instructions.js"></script>
+    <script src="./js/jspsych/plugins/jspsych-html-button-response.js"></script>
+
+
+
+    <link rel="stylesheet" href="./js/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="./js/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="./js/css/jspsych.css" type="text/css" />
+
+</head>
+
+<body>
+
+<script type='text/javascript'>
+
+    /* create timeline */
+    var experiment = [];
+
+    /* Instruction Pages */
+
+    var instructions = {
+        type: "instructions",
+        pages: ['<img src="./images/Instructions1.png"></img>',
+                '<img src="./images/Instructions2.png"></img>',
+                '<img src="./images/Instructions3.png"></img>',
+                '<img src="./images/Instructions4.png"></img>'],
+        show_clickable_nav: true
+    };
+    experiment.push(instructions);
+
+
+    var endPrompt = {
+        type: "html-button-response",
+        stimulus: "<p>Thank you for participating!</p>",
+        choices: ['Submit'],
+        trial_duration: null
+    };
+
+    experiment.push(endPrompt);
+    /*******************
+     * Run Task
+     ******************/
+    jsPsych.init({
+        timeline: experiment
+    });
+
+</script>
+
+</body>
+</html>

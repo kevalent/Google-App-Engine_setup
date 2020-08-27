@@ -1,0 +1,30 @@
+"""
+Credit:
+This file was borrowed from
+Danielle Navarro @ University of New South Wales.
+https://github.com/djnavarro/blankex
+
+"""
+
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /images
+  static_dir: images
+
+- url: /js
+  static_dir: js
+
+- url: /.*
+  script: backend.application
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
+
+builtins:
+  - remote_api: on
